@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
 
   def initialize
-    @loaded = 0
+    @@loaded = 0
   end
 
   def fortune
@@ -21,8 +21,8 @@ class CatsController < ApplicationController
   end
 
   def refresh
-    @loaded += 1
-    render json: {times_loaded: @loaded}
+    @@loaded += 1
+    render json: {times_loaded: @@loaded}
   end
 
   def beers
